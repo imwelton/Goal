@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1323424891307976}
+  m_IsPrefabParent: 1
+--- !u!1 &1323424891307976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4952704340027344}
+  - component: {fileID: 114919903632136152}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4952704340027344
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1323424891307976}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.11, y: 2.46, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114919903632136152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1323424891307976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d686b7de44e0c124eab3de9633d3a609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bola:
+  - {fileID: 1728806790980884, guid: 0fe77ca11c350ce41bcb746cdca10d32, type: 2}
+  - {fileID: 1728806790980884, guid: adfae6cbfa2adce4989d7c4b316b73be, type: 2}
+  - {fileID: 1728806790980884, guid: e4561c41cafec8843be8e9f84589ad6c, type: 2}
+  - {fileID: 1728806790980884, guid: 8c3e93fda8349ae4e8cd9dd629bb331e, type: 2}
+  - {fileID: 1728806790980884, guid: bee6dc7d956d5f14294538e3c30e26ce, type: 2}
+  - {fileID: 1728806790980884, guid: 080f3e0cf0e0ecd4485ede9b48549436, type: 2}
+  bolasNum: 2
+  bolasEmCena: 0
+  pos: {fileID: 0}
+  win: 0
+  tiro: 0
+  jogoComecou: 0
