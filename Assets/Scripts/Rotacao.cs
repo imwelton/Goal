@@ -8,6 +8,9 @@ public class Rotacao : MonoBehaviour
     [SerializeField] private Transform posStart;
     [SerializeField] private Image setaImg;
     public float zRotate;
+    public bool liberaRot = false;
+    public bool liberaTiro = false;
+
     private void Start()
     {
         PosicionaBola();
@@ -18,6 +21,7 @@ public class Rotacao : MonoBehaviour
     {
         RotacaoSeta();
         InputDeRotacao();
+        LimitaRotacao();
     }
     private void PosicionaSeta()
     {
@@ -36,13 +40,48 @@ public class Rotacao : MonoBehaviour
 
     private void InputDeRotacao()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (liberaRot)
         {
-            zRotate += 2.5f;
+            float moveY = Input.GetAxis("Mouse Y");
+
+
+            if(zRotate < 90)
+            {
+                if (moveY > 0)
+                {
+                    zRotate += 2.5f;
+                }
+            }
+            if(zRotate > 0)
+            {
+                if (moveY < 0)
+                {
+                    zRotate -= 2.5f;
+                }
+            }
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+    }
+
+    void LimitaRotacao()
+    {
+        if(zRotate > 90)
         {
-            zRotate -= 2.5f;
+            zRotate = 90;
+        }else if(zRotate < 0)
+        {
+            zRotate = 0;
         }
+    }
+
+    private void OnMouseDown()
+    {
+        liberaRot = true;
+
+    }
+
+    private void OnMouseUp()
+    {
+        liberaRot = false;
+        liberaTiro = true;
     }
 }
