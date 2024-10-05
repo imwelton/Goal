@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3395549347267577974}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.36, y: -2.73, z: 0}
   m_LocalScale: {x: 0.6776, y: 0.60209996, z: 1}
   m_ConstrainProportionsScale: 0
@@ -165,7 +165,7 @@ PolygonCollider2D:
     - - {x: -0.051008064, y: 0.95216274}
       - {x: -0.7993894, y: 2.0063305}
       - {x: -1.8947212, y: 2.0981443}
-      - {x: -1.5995173, y: 1.933394}
+      - {x: -1.9021465, y: 1.9042016}
       - {x: -0.90531117, y: 1.9322438}
       - {x: -0.04369116, y: 0.7409216}
       - {x: 0.9363466, y: -0.6368016}
@@ -233,7 +233,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -248,10 +248,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1}
+    - - {x: -0.05688338, y: 0.9786611}
       - {x: -0.80982125, y: 1.9978033}
-      - {x: -1.7842015, y: 1.9163607}
-      - {x: -1.7694927, y: -2.091065}
-      - {x: 0.56228137, y: -2.07193}
-      - {x: 2.0732522, y: -2.0541604}
+      - {x: -1.5771297, y: 2.0243895}
+      - {x: -1.6431663, y: 2.0952113}
+      - {x: -1.9169283, y: 2.0977411}
+      - {x: -1.9128615, y: 1.8979291}
+      - {x: -0.906758, y: 1.9099665}
+      - {x: 1.96541, y: -2.1039386}
+      - {x: 2.0542915, y: -2.0008132}
   m_UseDelaunayMesh: 0
