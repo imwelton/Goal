@@ -22,6 +22,11 @@ public class LevelManager : MonoBehaviour
         foreach(Level level in levelList)
         {
             GameObject btnNovo = Instantiate(botao) as GameObject;
+            BotaoLevel btnNew = btnNovo.GetComponent<BotaoLevel>();
+            btnNew.levelTxtBtn.text = level.levelText;
+            btnNew.desbloqueadoBtn = level.desbloqueado;
+            btnNew.GetComponent<Button>().interactable = level.habilitado;
+
             btnNovo.transform.SetParent(localBtn, false);
         }
     }

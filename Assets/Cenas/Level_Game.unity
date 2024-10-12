@@ -793,10 +793,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 484069548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.16800001, y: 0.10169229}
-  m_AnchorMax: {x: 0.7794964, y: 0.7064423}
-  m_AnchoredPosition: {x: -0.6799927, y: -0.05999756}
-  m_SizeDelta: {x: 2.4199982, y: 3.2700005}
+  m_AnchorMin: {x: 0.259, y: 0.10169229}
+  m_AnchorMax: {x: 0.71649635, y: 0.8324089}
+  m_AnchoredPosition: {x: 6.8399963, y: -14.57}
+  m_SizeDelta: {x: 4.31, y: 13.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &893601555
 MonoBehaviour:
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 30, y: 35}
+  m_Spacing: {x: 30, y: 15}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &893601556
@@ -889,7 +889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9834022c347d6bb4aa8d35c7128b31a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  botao: {fileID: 7357171953889330495, guid: 9b0bf3c29659a5d42a46f63339fc8998, type: 3}
+  botao: {fileID: 662461217178313825, guid: b55d4ec260d8dec4dbea64c31ce10cf8, type: 3}
   localBtn: {fileID: 893601554}
   levelList:
   - levelText: 1
