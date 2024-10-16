@@ -895,15 +895,19 @@ MonoBehaviour:
   - levelText: 1
     habilitado: 1
     desbloqueado: 1
+    txtAtivo: 1
   - levelText: 2
     habilitado: 0
     desbloqueado: 0
+    txtAtivo: 0
   - levelText: 3
     habilitado: 0
     desbloqueado: 0
+    txtAtivo: 0
   - levelText: 4
     habilitado: 0
     desbloqueado: 0
+    txtAtivo: 0
 --- !u!4 &1020477380
 Transform:
   m_ObjectHideFlags: 0

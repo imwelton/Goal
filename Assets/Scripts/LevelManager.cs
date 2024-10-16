@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class LevelManager : MonoBehaviour
         public string levelText;
         public bool habilitado;
         public int desbloqueado;
+        public bool txtAtivo;
     }
 
     public GameObject botao;
@@ -30,10 +32,14 @@ public class LevelManager : MonoBehaviour
             {
                 level.desbloqueado = 1;
                 level.habilitado = true;
+                level.txtAtivo = true;
             }
 
             btnNew.desbloqueadoBtn = level.desbloqueado;
             btnNew.GetComponent<Button>().interactable = level.habilitado;
+            btnNew.levelTxtBtn.enabled = level.txtAtivo;
+
+            btnNew.GetComponent<Button>().onClick.AddListener(()=>ClickLevel("Level" + btnNew.levelTxtBtn.text));
 
             btnNovo.transform.SetParent(localBtn, false);
         }
@@ -46,6 +52,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        //PlayerPrefs.DeleteAll();
         ListaAdd();
     }
 }
