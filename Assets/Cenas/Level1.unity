@@ -257,6 +257,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20449490}
   m_CullTransparentMesh: 1
+--- !u!1 &56599809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 56599810}
+  m_Layer: 0
+  m_Name: Serra
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &56599810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56599809}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.39, y: 0.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 750035848}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &101523124
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +519,7 @@ GameObject:
   - component: {fileID: 296706690}
   - component: {fileID: 296706689}
   m_Layer: 5
-  m_Name: NumeroMoedas
+  m_Name: NumeroBolas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,7 +564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 20
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -622,7 +654,7 @@ GameObject:
   m_Layer: 0
   m_Name: WallLD
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1001,7 +1033,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 6.689664
+  orthographic size: 5.2241464
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1201,6 +1233,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &750035848 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 374361531512725160, guid: d010bb67b8392124da2ade0f58e03b19, type: 3}
+  m_PrefabInstance: {fileID: 7046871932256201131}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &811625244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,7 +1295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 20
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1468,7 +1505,7 @@ GameObject:
   m_Layer: 0
   m_Name: WallLE
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1916,6 +1953,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214853127}
   m_CullTransparentMesh: 1
+--- !u!1 &1255719865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1255719866}
+  - component: {fileID: 1255719867}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1255719866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255719865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.68, y: 4.16, z: -0.04453373}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1255719867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255719865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff11150196bbdab44839768f61599ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moedas: 0
 --- !u!114 &1272527294 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5614904436748628388, guid: f5350dcd165ce86449e46e29fb8ef0ce, type: 3}
@@ -2149,7 +2231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6382225963382061469, guid: de5b79b4647cb984e89646bcc59ed32c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5569496
+      value: -2.64
       objectReference: {fileID: 0}
     - target: {fileID: 6382225963382061469, guid: de5b79b4647cb984e89646bcc59ed32c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2292,7 +2374,7 @@ GameObject:
   - component: {fileID: 1511590538}
   - component: {fileID: 1511590537}
   m_Layer: 5
-  m_Name: MoedaImg
+  m_Name: BolaImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3264,7 +3346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8063707697142348035, guid: 918aa2b5b0b9aa64a9755312ec4068f7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5528
+      value: -3.63
       objectReference: {fileID: 0}
     - target: {fileID: 8063707697142348035, guid: 918aa2b5b0b9aa64a9755312ec4068f7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3504,15 +3586,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 56599810}
     m_Modifications:
     - target: {fileID: 374361531512725160, guid: d010bb67b8392124da2ade0f58e03b19, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 374361531512725160, guid: d010bb67b8392124da2ade0f58e03b19, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 374361531512725160, guid: d010bb67b8392124da2ade0f58e03b19, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3524,15 +3606,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 374361531512725160, guid: d010bb67b8392124da2ade0f58e03b19, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 374361531512725160, guid: d010bb67b8392124da2ade0f58e03b19, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 374361531512725160, guid: d010bb67b8392124da2ade0f58e03b19, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 374361531512725160, guid: d010bb67b8392124da2ade0f58e03b19, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3669,9 +3751,10 @@ SceneRoots:
   - {fileID: 330077896}
   - {fileID: 971954509}
   - {fileID: 914706637889334127}
-  - {fileID: 7046871932256201131}
+  - {fileID: 56599810}
   - {fileID: 272396600417799723}
   - {fileID: 1366189024}
   - {fileID: 1346393251}
   - {fileID: 2045376478}
   - {fileID: 7508070678987808888}
+  - {fileID: 1255719866}
