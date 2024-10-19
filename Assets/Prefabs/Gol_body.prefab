@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1227702291993456443}
-  - component: {fileID: 2741941181671256220}
+  - component: {fileID: 6030582501060249106}
   m_Layer: 0
   m_Name: Fez_Gol
   m_TagString: Untagged
@@ -204,7 +204,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1443321285829945971}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &2741941181671256220
+--- !u!60 &6030582501060249106
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,13 +248,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.05688338, y: 0.9786611}
-      - {x: -0.80982125, y: 1.9978033}
-      - {x: -1.5771297, y: 2.0243895}
-      - {x: -1.6431663, y: 2.0952113}
-      - {x: -1.9169283, y: 2.0977411}
-      - {x: -1.9128615, y: 1.8979291}
-      - {x: -0.906758, y: 1.9099665}
-      - {x: 1.96541, y: -2.1039386}
-      - {x: 2.0542915, y: -2.0008132}
+    - - {x: -0.06676002, y: 0.74455035}
+      - {x: -0.8835747, y: 1.9002872}
+      - {x: -1.3551929, y: 1.9249794}
+      - {x: -1.2979193, y: -1.9988172}
+      - {x: 0.8426976, y: -1.9788264}
+      - {x: 1.9316478, y: -2.0076578}
   m_UseDelaunayMesh: 0
