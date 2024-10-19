@@ -7,14 +7,14 @@ public class Rotacao : MonoBehaviour
 {
     [SerializeField] private Transform posStart;
     [SerializeField] private Image setaImg;
+    public GameObject setaGO;
     public float zRotate;
     public bool liberaRot = false;
     public bool liberaTiro = false;
 
     private void Start()
     {
-        PosicionaBola();
-        PosicionaSeta();
+        PosicionaBola();       
     }
 
     private void Update()
@@ -22,10 +22,11 @@ public class Rotacao : MonoBehaviour
         RotacaoSeta();
         InputDeRotacao();
         LimitaRotacao();
+        PosicionaSeta();
     }
     private void PosicionaSeta()
     {
-        setaImg.rectTransform.position = posStart.position;
+        setaImg.rectTransform.position = transform.position;
     }
 
     private void PosicionaBola()
@@ -76,12 +77,13 @@ public class Rotacao : MonoBehaviour
     private void OnMouseDown()
     {
         liberaRot = true;
-
+        setaGO.SetActive(true);
     }
 
     private void OnMouseUp()
     {
         liberaRot = false;
         liberaTiro = true;
+        setaGO.SetActive(false);
     }
 }
