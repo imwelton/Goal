@@ -11,6 +11,7 @@ public class MoedasControl : MonoBehaviour
         else
         {
             ScoreManager.instance.ColetaMoedas(10);
+            AudioManager.instance.SonsFXToca(0);
             Destroy(gameObject);
         }
     }

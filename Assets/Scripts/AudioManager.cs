@@ -5,8 +5,14 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
+
+    //Músicas
     public AudioClip[] clips;
     public AudioSource musicaBG;
+
+    //Efeitos sonoros
+    public AudioClip[] clipsFX;
+    public AudioSource sonsFX;
 
     private void Awake()
     {
@@ -19,8 +25,6 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        musicaBG = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -35,5 +39,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip GetRandom()
     {
         return clips[Random.Range(0, clips.Length)];
+    }
+
+    public void SonsFXToca(int index)
+    {
+        sonsFX.PlayOneShot(clipsFX[index]);
     }
 }
