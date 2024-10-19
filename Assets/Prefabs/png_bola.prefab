@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6600902681188715863}
   - component: {fileID: 4999512304184645752}
   - component: {fileID: 9164347716306399515}
+  - component: {fileID: 8227844377313091726}
   m_Layer: 0
   m_Name: png_bola
   m_TagString: bola
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.66, y: -2.89, z: 0}
-  m_LocalScale: {x: 0.1324135, y: 0.1358688, z: 1}
+  m_LocalScale: {x: 0.022397744, y: 0.022982208, z: 0.16915}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 54d6886c5a60fd640aea4225eef9080f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -164,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posStart: {fileID: 0}
   setaImg: {fileID: 0}
+  setaGO: {fileID: 0}
   zRotate: 0
   liberaRot: 0
   liberaTiro: 0
@@ -181,3 +183,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 1
   seta2Img: {fileID: 0}
+--- !u!95 &8227844377313091726
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642915856054774940}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2acfe229ef6f013418da5704119440fc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -31,8 +31,7 @@ public class AudioManager : MonoBehaviour
     {
         if (!musicaBG.isPlaying)
         {
-            musicaBG.clip = GetRandom();
-            musicaBG.Play();
+            musicaBG.PlayOneShot(GetRandom());
         }
     }
 
