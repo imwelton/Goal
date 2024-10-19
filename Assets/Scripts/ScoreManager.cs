@@ -20,6 +20,10 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        GameStartScoreM();  
+    }
     public void GameStartScoreM()
     {
         if (PlayerPrefs.HasKey("moedasSave"))
