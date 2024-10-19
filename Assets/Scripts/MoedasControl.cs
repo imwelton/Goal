@@ -6,7 +6,9 @@ public class MoedasControl : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.gameObject.CompareTag("bola"))
+        if (!collision.gameObject.CompareTag("bola")) return;
+
+        else
         {
             ScoreManager.instance.ColetaMoedas(10);
             Destroy(gameObject);

@@ -22,6 +22,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
+        //PlayerPrefs.DeleteAll();
         GameStartScoreM();  
     }
     public void GameStartScoreM()
@@ -45,13 +46,13 @@ public class ScoreManager : MonoBehaviour
     public void ColetaMoedas(int coin)
     {
         moedas += coin;
-        SalvaMoedas(coin);
+        SalvaMoedas(moedas);
     }
 
     public void PerdeMoedas(int coin)
     {
         moedas -= coin;
-        SalvaMoedas(coin);
+        SalvaMoedas(moedas);
     }
 
     public void SalvaMoedas(int coin)
