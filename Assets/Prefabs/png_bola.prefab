@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 4470067988055156983}
   - component: {fileID: 8810063703154234536}
   - component: {fileID: 6600902681188715863}
-  - component: {fileID: 4999512304184645752}
-  - component: {fileID: 9164347716306399515}
   - component: {fileID: 8227844377313091726}
+  - component: {fileID: 1773460003311918230}
   m_Layer: 0
   m_Name: png_bola
   m_TagString: bola
@@ -151,38 +150,6 @@ CircleCollider2D:
   m_Offset: {x: -0.08846916, y: 0}
   serializedVersion: 2
   m_Radius: 2.648469
---- !u!114 &4999512304184645752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7642915856054774940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 825d01ae22c8291478e84fc6ccb79664, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posStart: {fileID: 0}
-  setaImg: {fileID: 0}
-  setaGO: {fileID: 0}
-  zRotate: 0
-  liberaRot: 0
-  liberaTiro: 0
---- !u!114 &9164347716306399515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7642915856054774940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86d5ab7a30bcbce4c8fd35da17195f91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 1
-  seta2Img: {fileID: 0}
 --- !u!95 &8227844377313091726
 Animator:
   serializedVersion: 5
@@ -204,3 +171,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1773460003311918230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642915856054774940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c93b2a787b5d0b43ae1bd699d0b78eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posStart: {fileID: 0}
+  setaImg: {fileID: 0}
+  setaGO: {fileID: 0}
+  zRotate: 0
+  liberaRot: 0
+  liberaTiro: 0
+  force: 0
+  seta2Img: {fileID: 0}
