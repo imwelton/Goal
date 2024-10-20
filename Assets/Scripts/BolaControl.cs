@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class BolaControl : MonoBehaviour
 {
-    [SerializeField] private Transform posStart;
+    [SerializeField] private Transform posStart,posSeta;
     [SerializeField] private Image setaImg;
     public GameObject setaGO;
     public float zRotate;
@@ -28,6 +28,7 @@ public class BolaControl : MonoBehaviour
     private void Start()
     {
         posStart = GameObject.Find("PosStart").GetComponent<Transform>();
+        posSeta = GameObject.Find("PosSeta").GetComponent<Transform>();
         PosicionaBola();
 
         //força
@@ -50,7 +51,7 @@ public class BolaControl : MonoBehaviour
 
     private void PosicionaSeta()
     {
-        setaImg.rectTransform.position = transform.position;
+        setaImg.rectTransform.position = posSeta.position;
     }
 
     private void PosicionaBola()
@@ -98,21 +99,6 @@ public class BolaControl : MonoBehaviour
             zRotate = 0;
         }
     }
-
-    private void OnMouseDown()
-    {
-        liberaRot = true;
-        setaGO.SetActive(true);
-    }
-
-    private void OnMouseUp()
-    {
-        liberaRot = false;
-        liberaTiro = true;
-        setaGO.SetActive(false);
-        AudioManager.instance.SonsFXToca(1);
-    }
-
     void AplicaForca()
     {
         float x = force * Mathf.Cos(zRotate * Mathf.Deg2Rad);
@@ -144,9 +130,27 @@ public class BolaControl : MonoBehaviour
 
         }
     }
-
     void BolaDinamica()
     {
         gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+    }
+    private void OnMouseDown()
+    {
+        if(GameManager.instance.tiro == 0)
+        {
+            liberaRot = true;
+            setaGO.SetActive(true);
+        }
+    }
+    private void OnMouseUp()
+    {
+        liberaRot = false;
+        setaGO.SetActive(false);
+        if (GameManager.instance.tiro == 0 && force > 0)
+        {
+            liberaTiro = true;
+            AudioManager.instance.SonsFXToca(1);
+            GameManager.instance.tiro = 1;
+        }
     }
 }
