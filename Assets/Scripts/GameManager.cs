@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject bola;
     private int bolasNum = 2;
     private bool bolaMorreu = false;
-    private int bolasEmCena = 0;
-    private Transform pos;
+    public int bolasEmCena = 0;
+    private Transform pos,posSeta,canvasSeta;
     public int tiro = 0;
 
     private void Awake()
@@ -55,5 +55,9 @@ public class GameManager : MonoBehaviour
     void Carrega(Scene cena,LoadSceneMode load)
     {
         pos = GameObject.Find("PosStart").GetComponent<Transform>();
+        posSeta = GameObject.Find("PosSeta").GetComponent<Transform>();
+        canvasSeta = GameObject.Find("CanvasSeta").GetComponent<Transform>();
+
+        canvasSeta.position = posSeta.position;
     }
 }

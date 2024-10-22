@@ -7,8 +7,7 @@ using UnityEngine.UI;
 
 public class BolaControl : MonoBehaviour
 {
-    [SerializeField] private Transform posStart,posSeta;
-    [SerializeField] private Image setaImg;
+    private Image setaCinzaImg, setaVerdeImg;
     public GameObject setaGO;
     public float zRotate;
     public bool liberaRot = false;
@@ -16,52 +15,43 @@ public class BolaControl : MonoBehaviour
 
     private Rigidbody2D bola;
     public float force = 0;
-    public Image seta2Img;
+
+    //paredes
+    private Transform paredeLE, paredeLD;
 
     private void Awake()
     {
-        setaImg = GameObject.Find("SetaCinza").GetComponent<Image>();
-        setaGO = GameObject.Find("CanvasSeta");
-        setaGO.SetActive(false);
+        setaCinzaImg = GameObject.Find("SetaCinza").GetComponent<Image>();
+        setaVerdeImg = setaCinzaImg.transform.GetChild(0).GetComponent<Image>();
+        setaCinzaImg.enabled = false;
+        setaVerdeImg.enabled = false;
+        paredeLD = GameObject.Find("ParedeLD").GetComponent<Transform>();
+        paredeLE = GameObject.Find("ParedeLE").GetComponent<Transform>();
     }
 
     private void Start()
     {
-        posStart = GameObject.Find("PosStart").GetComponent<Transform>();
-        posSeta = GameObject.Find("PosSeta").GetComponent<Transform>();
-        PosicionaBola();
-
         //força
-
-        seta2Img = setaImg.gameObject.transform.GetChild(0).GetComponent<Image>();
         bola = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    private void Update()   
     {
         RotacaoSeta();
         InputDeRotacao();
         LimitaRotacao();
-        PosicionaSeta();
 
         //força
         ControlaForca();
         AplicaForca();
-    }
 
-    private void PosicionaSeta()
-    {
-        setaImg.rectTransform.position = posSeta.position;
-    }
-
-    private void PosicionaBola()
-    {
-        gameObject.transform.position = posStart.position;
+        //paredes
+        Paredes();
     }
 
     private void RotacaoSeta()
     {
-        setaImg.rectTransform.eulerAngles = new Vector3(0, 0, zRotate);
+        setaCinzaImg.rectTransform.eulerAngles = new Vector3(0, 0, zRotate);
     }
 
     private void InputDeRotacao()
@@ -119,13 +109,13 @@ public class BolaControl : MonoBehaviour
 
             if (moveX < 0)
             {
-                seta2Img.fillAmount += 0.8f * Time.deltaTime;
-                force = seta2Img.fillAmount * 1000;
+                setaVerdeImg.fillAmount += 0.8f * Time.deltaTime;
+                force = setaVerdeImg.fillAmount * 1000;
             }
             if (moveX > 0)
             {
-                seta2Img.fillAmount -= 0.8f * Time.deltaTime;
-                force = seta2Img.fillAmount * 1000;
+                setaVerdeImg.fillAmount -= 0.8f * Time.deltaTime;
+                force = setaVerdeImg.fillAmount * 1000;
             }
 
         }
@@ -134,21 +124,42 @@ public class BolaControl : MonoBehaviour
     {
         gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
     }
+
+    void Paredes()
+    {
+        if(gameObject.transform.position.x > paredeLD.position.x || gameObject.transform.position.x < paredeLE.position.x)
+        {
+            Destroy(gameObject);
+            GameManager.instance.bolasEmCena -= 1;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("morte"))
+        {
+            Destroy(gameObject);
+            GameManager.instance.bolasEmCena -= 1;
+        }
+    }
     private void OnMouseDown()
     {
         if(GameManager.instance.tiro == 0)
         {
+            setaCinzaImg.enabled = true;
+            setaVerdeImg.enabled = true;
             liberaRot = true;
-            setaGO.SetActive(true);
         }
     }
     private void OnMouseUp()
     {
         liberaRot = false;
-        setaGO.SetActive(false);
+        setaCinzaImg.enabled = false;
+        setaVerdeImg.enabled = false;
         if (GameManager.instance.tiro == 0 && force > 0)
         {
             liberaTiro = true;
+            setaVerdeImg.fillAmount = 0;
             AudioManager.instance.SonsFXToca(1);
             GameManager.instance.tiro = 1;
         }
