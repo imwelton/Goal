@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     //Bola
     [SerializeField] private GameObject bola;
-    private int bolasNum = 2;
+    public int bolasNum = 2;
     private bool bolaMorreu = false;
     public int bolasEmCena = 0;
     private Transform pos,posSeta,canvasSeta;

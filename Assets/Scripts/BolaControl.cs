@@ -131,6 +131,7 @@ public class BolaControl : MonoBehaviour
         {
             Destroy(gameObject);
             GameManager.instance.bolasEmCena -= 1;
+            GameManager.instance.bolasNum -= 1;
         }
     }
 
@@ -140,6 +141,7 @@ public class BolaControl : MonoBehaviour
         {
             Destroy(gameObject);
             GameManager.instance.bolasEmCena -= 1;
+            GameManager.instance.bolasNum -= 1;
         }
     }
     private void OnMouseDown()

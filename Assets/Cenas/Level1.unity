@@ -564,7 +564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3237,7 +3237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11c1a0e3a94eb34aa928ce59af25f4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosUI: {fileID: 0}
 --- !u!4 &1720239881
 Transform:
   m_ObjectHideFlags: 0
@@ -3831,6 +3830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bola: {fileID: 7642915856054774940, guid: 918aa2b5b0b9aa64a9755312ec4068f7, type: 3}
+  bolasNum: 2
   bolasEmCena: 0
   tiro: 0
 --- !u!4 &2072063250
