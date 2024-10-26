@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour
         ScoreManager.instance.UpdateScore();
         UIManager.instance.UpdateUI();
         NascBolas();
+        if(bolasNum <= 0)
+        {
+            GameOver();
+        }
     }
 
     void NascBolas()
@@ -52,6 +56,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void GameOver()
+    {
+        UIManager.instance.GameOverUI();
+    }
     void Carrega(Scene cena,LoadSceneMode load)
     {
         pos = GameObject.Find("PosStart").GetComponent<Transform>();
