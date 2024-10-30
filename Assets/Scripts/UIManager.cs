@@ -61,6 +61,7 @@ public class UIManager : MonoBehaviour
     {
         loosePainel.SetActive(true);
     }
+    //
     void LigaDesligaPainel()
     {
         StartCoroutine(tempo());
