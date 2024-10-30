@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private Transform pos,posSeta,canvasSeta;
     public int tiro = 0;
     public bool win;
+    public int ondeEstou;
 
     private void Awake()
     {
@@ -77,5 +78,6 @@ public class GameManager : MonoBehaviour
         canvasSeta = GameObject.Find("CanvasSeta").GetComponent<Transform>();
 
         canvasSeta.position = posSeta.position;
+        ondeEstou = SceneManager.GetActiveScene().buildIndex;
     }
 }

@@ -1712,7 +1712,7 @@ GameObject:
   - component: {fileID: 896972103}
   - component: {fileID: 896972102}
   m_Layer: 5
-  m_Name: Play_Again
+  m_Name: BtnNovamenteLoose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2546,7 +2546,7 @@ GameObject:
   - component: {fileID: 1347919482}
   - component: {fileID: 1347919481}
   m_Layer: 5
-  m_Name: Menu_Inicial
+  m_Name: BtnMenuFasesLoose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2967,7 +2967,7 @@ GameObject:
   - component: {fileID: 1674576457}
   - component: {fileID: 1674576456}
   m_Layer: 5
-  m_Name: Play_Again
+  m_Name: BtnNovamenteLoose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3241,6 +3241,9 @@ MonoBehaviour:
   winPainel: {fileID: 0}
   pausePainel: {fileID: 0}
   pauseBtn: {fileID: 0}
+  pauseBtn_Return: {fileID: 0}
+  btnNovamente: {fileID: 0}
+  btnMenuFases: {fileID: 0}
 --- !u!4 &1720239881
 Transform:
   m_ObjectHideFlags: 0
@@ -3269,7 +3272,7 @@ GameObject:
   - component: {fileID: 1781376042}
   - component: {fileID: 1781376041}
   m_Layer: 5
-  m_Name: PlayPause
+  m_Name: Pause_Return
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3389,7 +3392,7 @@ GameObject:
   - component: {fileID: 1907051151}
   - component: {fileID: 1907051150}
   m_Layer: 5
-  m_Name: Menu_Inicial
+  m_Name: BtnMenuFasesWin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3838,6 +3841,7 @@ MonoBehaviour:
   bolasEmCena: 0
   tiro: 0
   win: 0
+  ondeEstou: 0
 --- !u!4 &2072063250
 Transform:
   m_ObjectHideFlags: 0

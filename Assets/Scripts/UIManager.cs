@@ -11,7 +11,8 @@ public class UIManager : MonoBehaviour
 
     private TextMeshProUGUI pontosUI,bolasUI;
     [SerializeField] private GameObject loosePainel,winPainel,pausePainel;
-    [SerializeField] private Button pauseBtn;
+    [SerializeField] private Button pauseBtn,pauseBtn_Return;
+    [SerializeField] private Button btnNovamente, btnMenuFases;
 
     private void Awake()
     {
@@ -35,8 +36,14 @@ public class UIManager : MonoBehaviour
         loosePainel = GameObject.Find("Loose_Painel");
         winPainel = GameObject.Find("Win_Painel");
         pausePainel = GameObject.Find("Pause_Painel");
+        btnNovamente = GameObject.Find("BtnNovamenteLoose").GetComponent<Button>();
+        btnMenuFases = GameObject.Find("BtnMenuFasesLoose").GetComponent<Button>();
         pauseBtn = GameObject.Find("Pause").GetComponent<Button>();
+        pauseBtn_Return = GameObject.Find("Pause_Return").GetComponent<Button>();
+
+        btnNovamente.onClick.AddListener(JogarNovamente);
         pauseBtn.onClick.AddListener(Pause);
+        pauseBtn_Return.onClick.AddListener(PauseReturn);
         LigaDesligaPainel();
     }
 
@@ -64,11 +71,30 @@ public class UIManager : MonoBehaviour
         pausePainel.GetComponent<Animator>().Play("MoveUI_Pause");
         Time.timeScale = 0;
     }
+
+    void PauseReturn()
+    {
+        pausePainel.GetComponent<Animator>().Play("MoveUI_PauseR");
+        Time.timeScale = 1;
+        StartCoroutine(EsperaPause());
+    }
+
+    IEnumerator EsperaPause()
+    {
+        yield return new WaitForSeconds(0.8f);
+
+        pausePainel.SetActive(false);
+    }
     IEnumerator tempo()
     {
         yield return new WaitForSeconds(0.001f);
         loosePainel.SetActive(false);
         winPainel.SetActive(false);
         pausePainel.SetActive(false);
+    }
+
+    void JogarNovamente()
+    {
+        SceneManager.LoadScene(GameManager.instance.ondeEstou);
     }
 }

@@ -21,12 +21,12 @@ EditorBuildSettings:
     path: Assets/Cenas/Level4.unity
     guid: 491e1ed23c34025498ecfde044f67761
   - enabled: 1
-    path: Assets/Cenas/Menu_Inicial.unity
-    guid: 772a2406cb569a949a11163f601eacbe
-  - enabled: 1
     path: Assets/Cenas/Level_Game.unity
     guid: f5da6e358901a2a4fa8bff2872af80a5
   - enabled: 1
     path: Assets/Cenas/Loja_Bolas.unity
     guid: c67cf5d3174034d428b19e0a8289b7d7
+  - enabled: 1
+    path: Assets/Cenas/Menu_Inicial.unity
+    guid: 772a2406cb569a949a11163f601eacbe
   m_configObjects: {}
