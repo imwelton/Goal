@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public int bolasEmCena = 0;
     private Transform pos,posSeta,canvasSeta;
     public int tiro = 0;
+    public bool win;
 
     private void Awake()
     {
@@ -44,6 +45,10 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+        if (win)
+        {
+            WinGame();
+        }
     }
 
     void NascBolas()
@@ -59,6 +64,11 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         UIManager.instance.GameOverUI();
+    }
+
+    void WinGame()
+    {
+        UIManager.instance.WinGameUI();
     }
     void Carrega(Scene cena,LoadSceneMode load)
     {

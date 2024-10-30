@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
 
     private TextMeshProUGUI pontosUI,bolasUI;
-    [SerializeField] private GameObject loosePainel;
+    [SerializeField] private GameObject loosePainel,winPainel;
 
     private void Awake()
     {
@@ -33,6 +33,7 @@ public class UIManager : MonoBehaviour
         pontosUI = GameObject.Find("PontosUI").GetComponent<TextMeshProUGUI>();
         bolasUI = GameObject.Find("NumeroBolas").GetComponent<TextMeshProUGUI>();
         loosePainel = GameObject.Find("Loose_Painel");
+        winPainel = GameObject.Find("Win_Painel");
     }
 
     public void UpdateUI()
@@ -41,6 +42,10 @@ public class UIManager : MonoBehaviour
         bolasUI.text = GameManager.instance.bolasNum.ToString();    
     }
 
+    public void WinGameUI()
+    {
+        winPainel.SetActive(true);
+    }
     public void GameOverUI()
     {
         loosePainel.SetActive(true);
@@ -54,5 +59,6 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.001f);
         loosePainel.SetActive(false);
+        winPainel.SetActive(false);
     }
 }

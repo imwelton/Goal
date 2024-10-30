@@ -2120,7 +2120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &987819138
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3238,6 +3238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loosePainel: {fileID: 0}
+  winPainel: {fileID: 0}
 --- !u!4 &1720239881
 Transform:
   m_ObjectHideFlags: 0
@@ -3834,6 +3835,7 @@ MonoBehaviour:
   bolasNum: 2
   bolasEmCena: 0
   tiro: 0
+  win: 0
 --- !u!4 &2072063250
 Transform:
   m_ObjectHideFlags: 0

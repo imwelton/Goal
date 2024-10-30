@@ -143,6 +143,10 @@ public class BolaControl : MonoBehaviour
             GameManager.instance.bolasEmCena -= 1;
             GameManager.instance.bolasNum -= 1;
         }
+        if (collision.CompareTag("win"))
+        {
+            GameManager.instance.win = true;
+        }
     }
     private void OnMouseDown()
     {
