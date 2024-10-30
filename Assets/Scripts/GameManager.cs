@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public int tiro = 0;
     public bool win;
     public int ondeEstou;
+    public bool jogoComecou;
 
     private void Awake()
     {
@@ -65,11 +66,21 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         UIManager.instance.GameOverUI();
+        jogoComecou = false;
     }
 
     void WinGame()
     {
         UIManager.instance.WinGameUI();
+        jogoComecou = false;
+    }
+
+    void StartGame()
+    {
+        jogoComecou = true;
+        bolasNum = 2;
+        bolasEmCena = 0;
+        UIManager.instance.StartUI();
     }
     void Carrega(Scene cena,LoadSceneMode load)
     {
@@ -79,5 +90,6 @@ public class GameManager : MonoBehaviour
 
         canvasSeta.position = posSeta.position;
         ondeEstou = SceneManager.GetActiveScene().buildIndex;
+        StartGame();
     }
 }
