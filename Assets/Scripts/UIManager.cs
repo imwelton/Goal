@@ -10,7 +10,8 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
 
     private TextMeshProUGUI pontosUI,bolasUI;
-    [SerializeField] private GameObject loosePainel,winPainel;
+    [SerializeField] private GameObject loosePainel,winPainel,pausePainel;
+    [SerializeField] private Button pauseBtn;
 
     private void Awake()
     {
@@ -24,8 +25,7 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        SceneManager.sceneLoaded += Carrega;
-        LigaDesligaPainel();    
+        SceneManager.sceneLoaded += Carrega;   
     }
 
     void Carrega(Scene cena, LoadSceneMode modo)
@@ -34,6 +34,10 @@ public class UIManager : MonoBehaviour
         bolasUI = GameObject.Find("NumeroBolas").GetComponent<TextMeshProUGUI>();
         loosePainel = GameObject.Find("Loose_Painel");
         winPainel = GameObject.Find("Win_Painel");
+        pausePainel = GameObject.Find("Pause_Painel");
+        pauseBtn = GameObject.Find("Pause").GetComponent<Button>();
+        pauseBtn.onClick.AddListener(Pause);
+        LigaDesligaPainel();
     }
 
     public void UpdateUI()
@@ -54,11 +58,17 @@ public class UIManager : MonoBehaviour
     {
         StartCoroutine(tempo());
     }
-
+    void Pause()
+    {
+        pausePainel.SetActive(true);
+        pausePainel.GetComponent<Animator>().Play("MoveUI_Pause");
+        Time.timeScale = 0;
+    }
     IEnumerator tempo()
     {
         yield return new WaitForSeconds(0.001f);
         loosePainel.SetActive(false);
         winPainel.SetActive(false);
+        pausePainel.SetActive(false);
     }
 }

@@ -2021,7 +2021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &974035599
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2055,7 +2055,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9de0f6d201de9c24fafc66a59b7bdb8e, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -3239,6 +3239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loosePainel: {fileID: 0}
   winPainel: {fileID: 0}
+  pausePainel: {fileID: 0}
+  pauseBtn: {fileID: 0}
 --- !u!4 &1720239881
 Transform:
   m_ObjectHideFlags: 0
@@ -3267,7 +3269,7 @@ GameObject:
   - component: {fileID: 1781376042}
   - component: {fileID: 1781376041}
   m_Layer: 5
-  m_Name: Pause
+  m_Name: PlayPause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3695,7 +3697,7 @@ GameObject:
   - component: {fileID: 2004039468}
   - component: {fileID: 2004039467}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
