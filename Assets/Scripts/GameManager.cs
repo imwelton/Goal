@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private Transform pos,posSeta,canvasSeta;
     public int tiro = 0;
     public bool win;
-    public int ondeEstou;
+    //public int ondeEstou;
     public bool jogoComecou;
 
     private void Awake()
@@ -80,16 +80,19 @@ public class GameManager : MonoBehaviour
         jogoComecou = true;
         bolasNum = 2;
         bolasEmCena = 0;
+        win = false;
         UIManager.instance.StartUI();
     }
     void Carrega(Scene cena,LoadSceneMode load)
     {
-        pos = GameObject.Find("PosStart").GetComponent<Transform>();
-        posSeta = GameObject.Find("PosSeta").GetComponent<Transform>();
-        canvasSeta = GameObject.Find("CanvasSeta").GetComponent<Transform>();
+        if(OndeEstou.instance.fase != 4)
+        {
+            pos = GameObject.Find("PosStart").GetComponent<Transform>();
+            posSeta = GameObject.Find("PosSeta").GetComponent<Transform>();
+            canvasSeta = GameObject.Find("CanvasSeta").GetComponent<Transform>();
 
-        canvasSeta.position = posSeta.position;
-        ondeEstou = SceneManager.GetActiveScene().buildIndex;
-        StartGame();
+            canvasSeta.position = posSeta.position;
+            StartGame();
+        }
     }
 }
