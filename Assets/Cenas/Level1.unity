@@ -1712,7 +1712,7 @@ GameObject:
   - component: {fileID: 896972103}
   - component: {fileID: 896972102}
   m_Layer: 5
-  m_Name: BtnNovamenteLoose
+  m_Name: BtnNovamenteLose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2546,7 +2546,7 @@ GameObject:
   - component: {fileID: 1347919482}
   - component: {fileID: 1347919481}
   m_Layer: 5
-  m_Name: BtnMenuFasesLoose
+  m_Name: BtnMenuFasesLose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2710,51 +2710,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de5b79b4647cb984e89646bcc59ed32c, type: 3}
---- !u!1 &1393737168
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1393737169}
-  - component: {fileID: 1393737170}
-  m_Layer: 0
-  m_Name: OndeEstou
-  m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1393737169
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393737168}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.71, y: 4.73, z: -0.014348635}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1393737170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393737168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c598764948b91ee449575a2b0508a84b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fase: 0
 --- !u!1 &1505822669
 GameObject:
   m_ObjectHideFlags: 0
@@ -3012,7 +2967,7 @@ GameObject:
   - component: {fileID: 1674576457}
   - component: {fileID: 1674576456}
   m_Layer: 5
-  m_Name: BtnNovamenteLoose
+  m_Name: BtnNovamenteWin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3289,6 +3244,7 @@ MonoBehaviour:
   pauseBtn_Return: {fileID: 0}
   btnNovamente: {fileID: 0}
   btnMenuFases: {fileID: 0}
+  btnLevelWin: {fileID: 0}
   moedasNumAntes: 0
   moedasNumDepois: 0
   resultado: 0
@@ -3628,7 +3584,7 @@ GameObject:
   - component: {fileID: 1960152713}
   - component: {fileID: 1960152712}
   m_Layer: 5
-  m_Name: Avancar
+  m_Name: AvancarWin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4347,4 +4303,3 @@ SceneRoots:
   - {fileID: 1720239881}
   - {fileID: 2072063250}
   - {fileID: 478300605}
-  - {fileID: 1393737169}

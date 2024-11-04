@@ -20,6 +20,11 @@ public class LevelManager : MonoBehaviour
     public Transform localBtn;
     public List<Level> levelList;
 
+    private void Awake()
+    {
+        Destroy(GameObject.Find("UIManager"));
+        Destroy(GameObject.Find("GameManager"));
+    }
     void ListaAdd()
     {
         foreach(Level level in levelList)

@@ -12,7 +12,8 @@ public class UIManager : MonoBehaviour
     private TextMeshProUGUI pontosUI,bolasUI;
     [SerializeField] private GameObject loosePainel,winPainel,pausePainel;
     [SerializeField] private Button pauseBtn,pauseBtn_Return;
-    [SerializeField] private Button btnNovamente, btnMenuFases; //loose
+    [SerializeField] private Button btnNovamente, btnMenuFases; //lose
+    [SerializeField] private Button btnLevelWin,btnNovamenteWin,btnAvancaWin;    //win
     public int moedasNumAntes, moedasNumDepois, resultado;
 
     private void Awake()
@@ -34,23 +35,34 @@ public class UIManager : MonoBehaviour
     {
         if(OndeEstou.instance.fase != 4)
         {
+            //Elementos da UI
             pontosUI = GameObject.Find("PontosUI").GetComponent<TextMeshProUGUI>();
             bolasUI = GameObject.Find("NumeroBolas").GetComponent<TextMeshProUGUI>();
+            //Paineis
             loosePainel = GameObject.Find("Loose_Painel");
             winPainel = GameObject.Find("Win_Painel");
             pausePainel = GameObject.Find("Pause_Painel");
-            btnNovamente = GameObject.Find("BtnNovamenteLoose").GetComponent<Button>();
-            btnMenuFases = GameObject.Find("BtnMenuFasesLoose").GetComponent<Button>();
+            //Botões de pause
+            btnNovamente = GameObject.Find("BtnNovamenteLose").GetComponent<Button>();
+            btnMenuFases = GameObject.Find("BtnMenuFasesLose").GetComponent<Button>();
+            //Botões de lose
             pauseBtn = GameObject.Find("Pause").GetComponent<Button>();
             pauseBtn_Return = GameObject.Find("Pause_Return").GetComponent<Button>();
-
+            //Botões de win
+            btnLevelWin = GameObject.Find("BtnMenuFasesWin").GetComponent<Button>();
+            btnNovamenteWin = GameObject.Find("BtnNovamenteWin").GetComponent<Button>();
+            btnAvancaWin = GameObject.Find("AvancarWin").GetComponent<Button>();
+            //Eventos
             pauseBtn.onClick.AddListener(Pause);
             pauseBtn_Return.onClick.AddListener(PauseReturn);
 
-            //you loose
+            //you lose
             btnNovamente.onClick.AddListener(JogarNovamente);
             btnMenuFases.onClick.AddListener(Levels);
             moedasNumAntes = PlayerPrefs.GetInt("moedasSave");
+
+            //you win
+            btnLevelWin.onClick.AddListener(Levels);
 
         }
     }
