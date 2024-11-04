@@ -31,7 +31,6 @@ public class BolaControl : MonoBehaviour
 
     private void Start()
     {
-        //força
         bola = GetComponent<Rigidbody2D>();
     }
 
@@ -41,7 +40,7 @@ public class BolaControl : MonoBehaviour
         InputDeRotacao();
         LimitaRotacao();
 
-        //força
+        //forca
         ControlaForca();
         AplicaForca();
 

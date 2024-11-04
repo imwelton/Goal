@@ -52,17 +52,18 @@ public class UIManager : MonoBehaviour
             btnLevelWin = GameObject.Find("BtnMenuFasesWin").GetComponent<Button>();
             btnNovamenteWin = GameObject.Find("BtnNovamenteWin").GetComponent<Button>();
             btnAvancaWin = GameObject.Find("AvancarWin").GetComponent<Button>();
-            //Eventos
+            //Eventos pause
             pauseBtn.onClick.AddListener(Pause);
             pauseBtn_Return.onClick.AddListener(PauseReturn);
-
-            //you lose
+            //Eventos you lose
             btnNovamente.onClick.AddListener(JogarNovamente);
             btnMenuFases.onClick.AddListener(Levels);
-            moedasNumAntes = PlayerPrefs.GetInt("moedasSave");
-
-            //you win
+            //Eventos you win
             btnLevelWin.onClick.AddListener(Levels);
+            btnNovamenteWin.onClick.AddListener(JogarNovamente);
+            btnAvancaWin.onClick.AddListener(ProximaFase);
+
+            moedasNumAntes = PlayerPrefs.GetInt("moedasSave");
 
         }
     }
@@ -148,6 +149,15 @@ public class UIManager : MonoBehaviour
         {
             resultado = 0;
             SceneManager.LoadScene(4);
+        }
+    }
+
+    void ProximaFase()
+    {
+        if (GameManager.instance.win)
+        {
+            int temp = OndeEstou.instance.fase + 1;
+            SceneManager.LoadScene(temp);
         }
     }
 }

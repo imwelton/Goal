@@ -2665,6 +2665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: caixa_0 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4483054214944239236, guid: de5b79b4647cb984e89646bcc59ed32c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6382225963382061469, guid: de5b79b4647cb984e89646bcc59ed32c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.57
@@ -3245,6 +3249,8 @@ MonoBehaviour:
   btnNovamente: {fileID: 0}
   btnMenuFases: {fileID: 0}
   btnLevelWin: {fileID: 0}
+  btnNovamenteWin: {fileID: 0}
+  btnAvancaWin: {fileID: 0}
   moedasNumAntes: 0
   moedasNumDepois: 0
   resultado: 0
@@ -3949,6 +3955,10 @@ PrefabInstance:
     - target: {fileID: 4483054214944239236, guid: de5b79b4647cb984e89646bcc59ed32c, type: 3}
       propertyPath: m_Name
       value: caixa_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483054214944239236, guid: de5b79b4647cb984e89646bcc59ed32c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6382225963382061469, guid: de5b79b4647cb984e89646bcc59ed32c, type: 3}
       propertyPath: m_LocalPosition.x
