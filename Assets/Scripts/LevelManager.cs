@@ -22,8 +22,22 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        Destroy(GameObject.Find("UIManager"));
-        Destroy(GameObject.Find("GameManager"));
+        if (GameObject.Find("UIManager"))
+        {
+            Destroy(GameObject.Find("UIManager"));
+        }
+        if ((GameObject.Find("UIManagerClone")))
+        {
+            Destroy(GameObject.Find("UIManagerClone"));
+        }
+        if ((GameObject.Find("GameManager")))
+        {
+            Destroy(GameObject.Find("GameManager"));
+        }
+        if ((GameObject.Find("GameManagerClone")))
+        {
+            Destroy(GameObject.Find("GameManagerClone"));
+        }
     }
     void ListaAdd()
     {

@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class BolaControl : MonoBehaviour
 {
     private Image setaCinzaImg, setaVerdeImg;
-    public GameObject setaGO;
     public float zRotate;
     public bool liberaRot = false;
     public bool liberaTiro = false;

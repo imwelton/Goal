@@ -28,44 +28,49 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        SceneManager.sceneLoaded += Carrega;   
+        SceneManager.sceneLoaded += Carrega;
+        PegaDados();
     }
 
     void Carrega(Scene cena, LoadSceneMode modo)
     {
         if(OndeEstou.instance.fase != 4)
         {
-            //Elementos da UI
-            pontosUI = GameObject.Find("PontosUI").GetComponent<TextMeshProUGUI>();
-            bolasUI = GameObject.Find("NumeroBolas").GetComponent<TextMeshProUGUI>();
-            //Paineis
-            loosePainel = GameObject.Find("Loose_Painel");
-            winPainel = GameObject.Find("Win_Painel");
-            pausePainel = GameObject.Find("Pause_Painel");
-            //Botões de pause
-            btnNovamente = GameObject.Find("BtnNovamenteLose").GetComponent<Button>();
-            btnMenuFases = GameObject.Find("BtnMenuFasesLose").GetComponent<Button>();
-            //Botões de lose
-            pauseBtn = GameObject.Find("Pause").GetComponent<Button>();
-            pauseBtn_Return = GameObject.Find("Pause_Return").GetComponent<Button>();
-            //Botões de win
-            btnLevelWin = GameObject.Find("BtnMenuFasesWin").GetComponent<Button>();
-            btnNovamenteWin = GameObject.Find("BtnNovamenteWin").GetComponent<Button>();
-            btnAvancaWin = GameObject.Find("AvancarWin").GetComponent<Button>();
-            //Eventos pause
-            pauseBtn.onClick.AddListener(Pause);
-            pauseBtn_Return.onClick.AddListener(PauseReturn);
-            //Eventos you lose
-            btnNovamente.onClick.AddListener(JogarNovamente);
-            btnMenuFases.onClick.AddListener(Levels);
-            //Eventos you win
-            btnLevelWin.onClick.AddListener(Levels);
-            btnNovamenteWin.onClick.AddListener(JogarNovamente);
-            btnAvancaWin.onClick.AddListener(ProximaFase);
-
-            moedasNumAntes = PlayerPrefs.GetInt("moedasSave");
-
+            PegaDados();
         }
+    }
+
+    void PegaDados()
+    {
+        //Elementos da UI
+        pontosUI = GameObject.Find("PontosUI").GetComponent<TextMeshProUGUI>();
+        bolasUI = GameObject.Find("NumeroBolas").GetComponent<TextMeshProUGUI>();
+        //Paineis
+        loosePainel = GameObject.Find("Loose_Painel");
+        winPainel = GameObject.Find("Win_Painel");
+        pausePainel = GameObject.Find("Pause_Painel");
+        //Botões de pause
+        btnNovamente = GameObject.Find("BtnNovamenteLose").GetComponent<Button>();
+        btnMenuFases = GameObject.Find("BtnMenuFasesLose").GetComponent<Button>();
+        //Botões de lose
+        pauseBtn = GameObject.Find("Pause").GetComponent<Button>();
+        pauseBtn_Return = GameObject.Find("Pause_Return").GetComponent<Button>();
+        //Botões de win
+        btnLevelWin = GameObject.Find("BtnMenuFasesWin").GetComponent<Button>();
+        btnNovamenteWin = GameObject.Find("BtnNovamenteWin").GetComponent<Button>();
+        btnAvancaWin = GameObject.Find("AvancarWin").GetComponent<Button>();
+        //Eventos pause
+        pauseBtn.onClick.AddListener(Pause);
+        pauseBtn_Return.onClick.AddListener(PauseReturn);
+        //Eventos you lose
+        btnNovamente.onClick.AddListener(JogarNovamente);
+        btnMenuFases.onClick.AddListener(Levels);
+        //Eventos you win
+        btnLevelWin.onClick.AddListener(Levels);
+        btnNovamenteWin.onClick.AddListener(JogarNovamente);
+        btnAvancaWin.onClick.AddListener(ProximaFase);
+
+        moedasNumAntes = PlayerPrefs.GetInt("moedasSave");
     }
 
     public void StartUI()

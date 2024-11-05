@@ -31,10 +31,12 @@ public class GameManager : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += Carrega;
+        SetaPosition();
     }
 
     private void Start()
     {
+        StartGame();
         ScoreManager.instance.GameStartScoreM();
     }
 
@@ -87,12 +89,17 @@ public class GameManager : MonoBehaviour
     {
         if(OndeEstou.instance.fase != 4)
         {
-            pos = GameObject.Find("PosStart").GetComponent<Transform>();
-            posSeta = GameObject.Find("PosSeta").GetComponent<Transform>();
-            canvasSeta = GameObject.Find("CanvasSeta").GetComponent<Transform>();
-
-            canvasSeta.position = posSeta.position;
+            SetaPosition();
             StartGame();
         }
+    }
+
+    void SetaPosition()
+    {
+        pos = GameObject.Find("PosStart").GetComponent<Transform>();
+        posSeta = GameObject.Find("PosSeta").GetComponent<Transform>();
+        canvasSeta = GameObject.Find("CanvasSeta").GetComponent<Transform>();
+
+        canvasSeta.position = posSeta.position;
     }
 }
