@@ -99,6 +99,7 @@ public class UIManager : MonoBehaviour
     }
     void Pause()
     {
+        Debug.Log("Pausing");
         pausePainel.SetActive(true);
         pausePainel.GetComponent<Animator>().Play("MoveUI_Pause");
         Time.timeScale = 0;
@@ -127,6 +128,7 @@ public class UIManager : MonoBehaviour
 
     void JogarNovamente()
     {
+        Debug.Log("Jogar novamente");
         if (!GameManager.instance.win)
         {
             SceneManager.LoadScene(OndeEstou.instance.fase);
@@ -143,6 +145,7 @@ public class UIManager : MonoBehaviour
 
     void Levels()
     {
+        Debug.Log("Voltar ao Levels");
         if (!GameManager.instance.win)
         {
             resultado = moedasNumDepois - moedasNumAntes;

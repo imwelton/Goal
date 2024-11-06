@@ -144,6 +144,9 @@ public class BolaControl : MonoBehaviour
         if (collision.CompareTag("win"))
         {
             GameManager.instance.win = true;
+            int temp = OndeEstou.instance.fase +1;
+            temp++;
+            PlayerPrefs.SetInt("Level" + temp ,1);
         }
     }
     private void OnMouseDown()
