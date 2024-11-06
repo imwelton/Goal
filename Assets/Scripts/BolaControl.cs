@@ -15,6 +15,9 @@ public class BolaControl : MonoBehaviour
     private Rigidbody2D bola;
     public float force = 0;
 
+    //morte bola anim
+    [SerializeField] private GameObject morteBolaAnim;
+
     //paredes
     private Transform paredeLE, paredeLD;
 
@@ -137,6 +140,7 @@ public class BolaControl : MonoBehaviour
     {
         if (collision.CompareTag("morte"))
         {
+            Instantiate(morteBolaAnim, transform.position, Quaternion.identity);
             Destroy(gameObject);
             GameManager.instance.bolasEmCena -= 1;
             GameManager.instance.bolasNum -= 1;

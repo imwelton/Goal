@@ -183,11 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c93b2a787b5d0b43ae1bd699d0b78eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posStart: {fileID: 0}
-  setaImg: {fileID: 0}
-  setaGO: {fileID: 0}
   zRotate: 0
   liberaRot: 0
   liberaTiro: 0
   force: 0
-  seta2Img: {fileID: 0}
+  morteBolaAnim: {fileID: 7199340590711042944, guid: ca5fd6a7696b43943806fa625cd22923, type: 3}
