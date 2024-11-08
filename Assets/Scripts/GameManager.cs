@@ -57,22 +57,12 @@ public class GameManager : MonoBehaviour
 
     void NascBolas()
     {
-        if (OndeEstou.instance.fase == 3)
+        if(bolasNum > 0 && bolasEmCena == 0)
         {
-            if(bolasNum > 0 && bolasEmCena == 0 && Camera.main.transform.position.x <= 1.75f)
-            {
-                Instantiate(bola, new Vector2(pos.position.x, pos.position.y), Quaternion.identity);
-                bolasEmCena += 1;
-                tiro = 0;
-            }
-            if (bolasNum > 0 && bolasEmCena == 0)
-            {
-                Instantiate(bola, new Vector2(pos.position.x, pos.position.y), Quaternion.identity);
-                bolasEmCena += 1;
-                tiro = 0;
-            }
+            Instantiate(bola, new Vector2(pos.position.x, pos.position.y), Quaternion.identity);
+            bolasEmCena += 1;
+            tiro = 0;
         }
-
     }
 
     void GameOver()
