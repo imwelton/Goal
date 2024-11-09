@@ -317,6 +317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Btn_Bolas
       objectReference: {fileID: 0}
+    - target: {fileID: 8206445061583924579, guid: 9b0bf3c29659a5d42a46f63339fc8998, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

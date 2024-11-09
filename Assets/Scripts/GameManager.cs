@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
         SceneManager.sceneLoaded += Carrega;
         SetaPosition();
     }
@@ -87,7 +86,7 @@ public class GameManager : MonoBehaviour
     }
     void Carrega(Scene cena,LoadSceneMode load)
     {
-        if(OndeEstou.instance.fase != 4)
+        if(OndeEstou.instance.fase != 4 || OndeEstou.instance.fase != 5 || OndeEstou.instance.fase != 6)
         {
             SetaPosition();
             StartGame();
@@ -96,6 +95,7 @@ public class GameManager : MonoBehaviour
 
     void SetaPosition()
     {
+        if (OndeEstou.instance.fase >= 4) return;
         pos = GameObject.Find("PosStart").GetComponent<Transform>();
         posSeta = GameObject.Find("PosSeta").GetComponent<Transform>();
         canvasSeta = GameObject.Find("CanvasSeta").GetComponent<Transform>();

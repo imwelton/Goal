@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
+
 
 public class UIManager : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button pauseBtn,pauseBtn_Return;
     [SerializeField] private Button btnNovamente, btnMenuFases; //lose
     [SerializeField] private Button btnLevelWin,btnNovamenteWin,btnAvancaWin;    //win
+    [SerializeField] private Image visaoCam;
     public int moedasNumAntes, moedasNumDepois, resultado;
 
     private void Awake()
@@ -34,7 +37,7 @@ public class UIManager : MonoBehaviour
 
     void Carrega(Scene cena, LoadSceneMode modo)
     {
-        if(OndeEstou.instance.fase != 4)
+        if(OndeEstou.instance.fase != 4 || OndeEstou.instance.fase != 5 || OndeEstou.instance.fase != 6)
         {
             PegaDados();
         }
@@ -43,22 +46,71 @@ public class UIManager : MonoBehaviour
     void PegaDados()
     {
         //Elementos da UI
-        pontosUI = GameObject.Find("PontosUI").GetComponent<TextMeshProUGUI>();
-        bolasUI = GameObject.Find("NumeroBolas").GetComponent<TextMeshProUGUI>();
+        if (GameObject.Find("PontosUI").GetComponent<TextMeshProUGUI>())
+        {
+            pontosUI = GameObject.Find("PontosUI").GetComponent<TextMeshProUGUI>();
+        }
+
+        if(GameObject.Find("NumeroBolas").GetComponent<TextMeshProUGUI>())
+        {
+            bolasUI = GameObject.Find("NumeroBolas").GetComponent<TextMeshProUGUI>();
+        }
+
+        if(bolasUI = GameObject.Find("NumeroBolas").GetComponent<TextMeshProUGUI>())
+        {
+            bolasUI = GameObject.Find("NumeroBolas").GetComponent<TextMeshProUGUI>();
+        }
+
         //Paineis
-        loosePainel = GameObject.Find("Loose_Painel");
-        winPainel = GameObject.Find("Win_Painel");
-        pausePainel = GameObject.Find("Pause_Painel");
+        if (GameObject.Find("Loose_Painel"))
+        {
+            loosePainel = GameObject.Find("Loose_Painel");
+        }
+
+        if (GameObject.Find("Win_Painel"))
+        {
+            winPainel = GameObject.Find("Win_Painel");
+        }
+
+        if (GameObject.Find("Pause_Painel"))
+        {
+            pausePainel = GameObject.Find("Pause_Painel");
+        }
+
         //Botões de pause
-        btnNovamente = GameObject.Find("BtnNovamenteLose").GetComponent<Button>();
-        btnMenuFases = GameObject.Find("BtnMenuFasesLose").GetComponent<Button>();
+        if (GameObject.Find("BtnNovamenteLose").GetComponent<Button>())
+        {
+            btnNovamente = GameObject.Find("BtnNovamenteLose").GetComponent<Button>();
+        }
+        if (GameObject.Find("BtnMenuFasesLose").GetComponent<Button>())
+        {
+            btnMenuFases = GameObject.Find("BtnMenuFasesLose").GetComponent<Button>();
+        }
+
         //Botões de lose
-        pauseBtn = GameObject.Find("Pause").GetComponent<Button>();
-        pauseBtn_Return = GameObject.Find("Pause_Return").GetComponent<Button>();
+        if (GameObject.Find("Pause").GetComponent<Button>())
+        {
+            pauseBtn = GameObject.Find("Pause").GetComponent<Button>();
+        }
+        if (GameObject.Find("Pause_Return").GetComponent<Button>())
+        {
+            pauseBtn_Return = GameObject.Find("Pause_Return").GetComponent<Button>();
+        }
+
         //Botões de win
-        btnLevelWin = GameObject.Find("BtnMenuFasesWin").GetComponent<Button>();
-        btnNovamenteWin = GameObject.Find("BtnNovamenteWin").GetComponent<Button>();
-        btnAvancaWin = GameObject.Find("AvancarWin").GetComponent<Button>();
+        if (GameObject.Find("BtnMenuFasesWin").GetComponent<Button>())
+        {
+            btnLevelWin = GameObject.Find("BtnMenuFasesWin").GetComponent<Button>();
+        }
+        if (GameObject.Find("BtnNovamenteWin").GetComponent<Button>())
+        {
+            btnNovamenteWin = GameObject.Find("BtnNovamenteWin").GetComponent<Button>();
+        }
+        if (GameObject.Find("AvancarWin").GetComponent<Button>())
+        {
+            btnAvancaWin = GameObject.Find("AvancarWin").GetComponent<Button>();
+        }
+        
         //Eventos pause
         pauseBtn.onClick.AddListener(Pause);
         pauseBtn_Return.onClick.AddListener(PauseReturn);
@@ -69,8 +121,20 @@ public class UIManager : MonoBehaviour
         btnLevelWin.onClick.AddListener(Levels);
         btnNovamenteWin.onClick.AddListener(JogarNovamente);
         btnAvancaWin.onClick.AddListener(ProximaFase);
+        //Visão da câmera
+        visaoCam = GameObject.Find("CameraVision").GetComponent<Image>();
 
         moedasNumAntes = PlayerPrefs.GetInt("moedasSave");
+    }
+    IEnumerator FadeCamVision()
+    {
+        visaoCam.DOFade(1, 0);
+        yield return new WaitForSeconds(0.001f);
+        visaoCam.DOFade(0, 0.2f);
+    }
+    public void UseFadeCamVision()
+    {
+        StartCoroutine(FadeCamVision());
     }
 
     public void StartUI()
@@ -86,10 +150,12 @@ public class UIManager : MonoBehaviour
 
     public void WinGameUI()
     {
+        if (loosePainel.activeSelf) return;
         winPainel.SetActive(true);
     }
     public void GameOverUI()
     {
+        if (winPainel.activeSelf) return;
         loosePainel.SetActive(true);
     }
     //
@@ -99,6 +165,7 @@ public class UIManager : MonoBehaviour
     }
     void Pause()
     {
+        if (winPainel.activeSelf || loosePainel.activeSelf) return;
         Debug.Log("Pausing");
         pausePainel.SetActive(true);
         pausePainel.GetComponent<Animator>().Play("MoveUI_Pause");
@@ -120,10 +187,20 @@ public class UIManager : MonoBehaviour
     }
     IEnumerator tempo()
     {
-        yield return new WaitForSeconds(0.001f);
+        if (visaoCam == null) yield break;
+        visaoCam.enabled = true;
+        visaoCam.DOFade(1, 0);
+
+        yield return new WaitForSeconds(0.1f);
         loosePainel.SetActive(false);
         winPainel.SetActive(false);
         pausePainel.SetActive(false);
+
+        yield return new WaitForSeconds(0.1f);
+        visaoCam.DOFade(0, 0.5f).OnComplete(() =>
+        {
+            visaoCam.enabled = false;
+        });
     }
 
     void JogarNovamente()
@@ -167,5 +244,24 @@ public class UIManager : MonoBehaviour
             int temp = OndeEstou.instance.fase + 1;
             SceneManager.LoadScene(temp);
         }
+    }
+
+    public bool PainelWinOn()
+    {
+        if (winPainel.activeSelf)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void DesativarPaineis()
+    {
+        winPainel.SetActive(false);
+        loosePainel.SetActive(false);
+        pausePainel.SetActive(false);
     }
 }

@@ -140,6 +140,7 @@ public class BolaControl : MonoBehaviour
     {
         if (collision.CompareTag("morte"))
         {
+            if (UIManager.instance.PainelWinOn()) return;
             Instantiate(morteBolaAnim, transform.position, Quaternion.identity);
             Destroy(gameObject);
             GameManager.instance.bolasEmCena -= 1;
